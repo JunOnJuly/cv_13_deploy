@@ -4,7 +4,6 @@ RUN mkdir /app
 WORKDIR /app
 
 COPY . /app
-RUN npm install -g npm@9.7.2
-RUN npm install
+RUN npm i --loglevel=error
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "build"]
