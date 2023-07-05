@@ -1,25 +1,28 @@
-version: '3'
+version: "3"
+
 services:
+  nginx:
+    restart: always
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    networks:
+      - frontend
+    
+  client:
+    container_name: front
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    volumes:
+      - "./front/:/app"
+      - "/app/node_modules"
+    networks:
+      - frontend
 
-    nginx:
-        container_name: nginx
-        build: ./nginx
-        image: app/nginx
-        restart: always
-        ports:
-          - "80:80"
-        volumes:
-          - ./mysite:/srv/docker-server
-          - ./log:/var/log/nginx
-        depends_on:
-          - django
-
-    django:
-        container_name: django
-        build: ./mysite
-        image: docker-server/django
-        restart: always
-        command: uwsgi --ini uwsgi.ini
-        volumes:
-          - ./mysite:/srv/docker-server
-          - ./log:/var/log/uwsgi
+networks: 
+  frontend:
+    driver: bridge
