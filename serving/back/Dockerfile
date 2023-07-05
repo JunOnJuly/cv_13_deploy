@@ -1,18 +1,15 @@
-From python:3.8.16
+From python:3.8.10
 
 ENV PYTHONUNBUFFERED 1
 
-RUN apt-get -y update
-RUN apt-get -y install vim
+RUN mkdir /app
+COPY . /app
 
-RUN mkdir /back
-COPY . /back
-
-WORKDIR /back
+WORKDIR /app
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
-# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "back.wsgi:application"]
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "stock.wsgi:application"]
