@@ -9,19 +9,20 @@ import { ttukpositions } from "./gukbobs/ttuk";
 import { gukbobpositions } from "./gukbobs/gukbob"
 import { phapositions } from "./gukbobs/pha"; 
 import { gogipositions } from "./gukbobs/gogi";
+import { points } from "./gukbobs/temp/points";
 
-function Ttukbaegi(props) {
+function Point() {
   const meshRef = useRef()
   const dummy = new THREE.Object3D()
   const spheres = useRef([])
-  const count = ttukpositions.length
+  const count = points.length
 
   useEffect(() => {
     console.log('init mesh start')
 
     for (let i = 0; i < count; i++) {
       const sphere = {
-        position : new THREE.Vector3(ttukpositions[i][1], ttukpositions[i][2], ttukpositions[i][0])
+        position : new THREE.Vector3(points[i][1], points[i][2], points[i][0])
       }
       spheres.current.push(sphere)
     }
@@ -37,114 +38,148 @@ function Ttukbaegi(props) {
   return (
         <instancedMesh 
         ref={meshRef} args={[null, null, count]}
-        onClick={()=>props.propState('main')}>
-          <sphereGeometry attach="geometry" args={[0.04, 6, 6]} />
-          <meshStandardMaterial attach="material" color={colors.Black} />
+        >
+          <sphereGeometry attach="geometry" args={[0.01, 6, 6]} />
+          <meshStandardMaterial attach="material" color={colors.WhiteBlue} />
         </instancedMesh>
   )
 }
 
-function Gukbob(props) {
-  const meshRef = useRef()
-  const dummy = new THREE.Object3D()
-  const spheres = useRef([])
-  const count = gukbobpositions.length
+// function Ttukbaegi(props) {
+//   const meshRef = useRef()
+//   const dummy = new THREE.Object3D()
+//   const spheres = useRef([])
+//   const count = ttukpositions.length
 
-  useEffect(() => {
-    console.log('init mesh start')
+//   useEffect(() => {
+//     console.log('init mesh start')
 
-    for (let i = 0; i < count; i++) {
-      const sphere = {
-        position : new THREE.Vector3(gukbobpositions[i][1], gukbobpositions[i][2], gukbobpositions[i][0])
-      }
-      spheres.current.push(sphere)
-    }
+//     for (let i = 0; i < count; i++) {
+//       const sphere = {
+//         position : new THREE.Vector3(ttukpositions[i][1], ttukpositions[i][2], ttukpositions[i][0])
+//       }
+//       spheres.current.push(sphere)
+//     }
 
-    spheres.current.forEach((sphere, i) => {
-      dummy.position.copy(sphere.position)
-      dummy.updateMatrix()
-      meshRef.current.setMatrixAt(i, dummy.matrix)
-    })
-    meshRef.current.instanceMatrix.needsUpdate = true
-  }, [])
+//     spheres.current.forEach((sphere, i) => {
+//       dummy.position.copy(sphere.position)
+//       dummy.updateMatrix()
+//       meshRef.current.setMatrixAt(i, dummy.matrix)
+//     })
+//     meshRef.current.instanceMatrix.needsUpdate = true
+//   }, [])
 
-  return (
-        <instancedMesh 
-        ref={meshRef} args={[null, null, count]}
-        onClick={()=>props.propState('main')}>
-          <sphereGeometry attach="geometry" args={[0.02, 6, 6]} />
-          <meshStandardMaterial attach="material" color={colors.White} />
-        </instancedMesh>
-  )
-}
+//   return (
+//         <instancedMesh 
+//         ref={meshRef} args={[null, null, count]}
+//         onClick={()=>props.propState('main')}>
+//           <sphereGeometry attach="geometry" args={[0.04, 6, 6]} />
+//           <meshStandardMaterial attach="material" color={colors.Black} />
+//         </instancedMesh>
+//   )
+// }
 
-function Pha(props) {
-  const meshRef = useRef()
-  const dummy = new THREE.Object3D()
-  const spheres = useRef([])
-  const count = phapositions.length
+// function Gukbob(props) {
+//   const meshRef = useRef()
+//   const dummy = new THREE.Object3D()
+//   const spheres = useRef([])
+//   const count = gukbobpositions.length
 
-  useEffect(() => {
-    console.log('init mesh start')
+//   useEffect(() => {
+//     console.log('init mesh start')
 
-    for (let i = 0; i < count; i++) {
-      const sphere = {
-        position : new THREE.Vector3(phapositions[i][1], phapositions[i][2], phapositions[i][0])
-      }
-      spheres.current.push(sphere)
-    }
+//     for (let i = 0; i < count; i++) {
+//       const sphere = {
+//         position : new THREE.Vector3(gukbobpositions[i][1], gukbobpositions[i][2], gukbobpositions[i][0])
+//       }
+//       spheres.current.push(sphere)
+//     }
 
-    spheres.current.forEach((sphere, i) => {
-      dummy.position.copy(sphere.position)
-      dummy.updateMatrix()
-      meshRef.current.setMatrixAt(i, dummy.matrix)
-    })
-    meshRef.current.instanceMatrix.needsUpdate = true
-  }, [])
+//     spheres.current.forEach((sphere, i) => {
+//       dummy.position.copy(sphere.position)
+//       dummy.updateMatrix()
+//       meshRef.current.setMatrixAt(i, dummy.matrix)
+//     })
+//     meshRef.current.instanceMatrix.needsUpdate = true
+//   }, [])
 
-  return (
-        <instancedMesh 
-        ref={meshRef} args={[null, null, count]}
-        onClick={()=>props.propState('main')}>
-          <sphereGeometry attach="geometry" args={[0.02, 6, 6]} />
-          <meshStandardMaterial attach="material" color={colors.Pha} />
-        </instancedMesh>
-  )
-}
+//   return (
+//         <instancedMesh 
+//         ref={meshRef} args={[null, null, count]}
+//         onClick={()=>props.propState('main')}>
+//           <sphereGeometry attach="geometry" args={[0.02, 6, 6]} />
+//           <meshStandardMaterial attach="material" color={colors.White} />
+//         </instancedMesh>
+//   )
+// }
 
-function Gogi(props) {
-  const meshRef = useRef()
-  const dummy = new THREE.Object3D()
-  const spheres = useRef([])
-  const count = gogipositions.length
+// function Pha(props) {
+//   const meshRef = useRef()
+//   const dummy = new THREE.Object3D()
+//   const spheres = useRef([])
+//   const count = phapositions.length
 
-  useEffect(() => {
-    console.log('init mesh start')
+//   useEffect(() => {
+//     console.log('init mesh start')
 
-    for (let i = 0; i < count; i++) {
-      const sphere = {
-        position : new THREE.Vector3(gogipositions[i][1], gogipositions[i][2], gogipositions[i][0])
-      }
-      spheres.current.push(sphere)
-    }
+//     for (let i = 0; i < count; i++) {
+//       const sphere = {
+//         position : new THREE.Vector3(phapositions[i][1], phapositions[i][2], phapositions[i][0])
+//       }
+//       spheres.current.push(sphere)
+//     }
 
-    spheres.current.forEach((sphere, i) => {
-      dummy.position.copy(sphere.position)
-      dummy.updateMatrix()
-      meshRef.current.setMatrixAt(i, dummy.matrix)
-    })
-    meshRef.current.instanceMatrix.needsUpdate = true
-  }, [])
+//     spheres.current.forEach((sphere, i) => {
+//       dummy.position.copy(sphere.position)
+//       dummy.updateMatrix()
+//       meshRef.current.setMatrixAt(i, dummy.matrix)
+//     })
+//     meshRef.current.instanceMatrix.needsUpdate = true
+//   }, [])
 
-  return (
-        <instancedMesh
-        ref={meshRef} args={[null, null, count]}
-        onClick={()=>props.propState('main')}>
-          <sphereGeometry attach="geometry" args={[0.02, 6, 6]} />
-          <meshStandardMaterial attach="material" color={colors.DarkWood} />
-        </instancedMesh>
-  )
-}
+//   return (
+//         <instancedMesh 
+//         ref={meshRef} args={[null, null, count]}
+//         onClick={()=>props.propState('main')}>
+//           <sphereGeometry attach="geometry" args={[0.02, 6, 6]} />
+//           <meshStandardMaterial attach="material" color={colors.Pha} />
+//         </instancedMesh>
+//   )
+// }
+
+// function Gogi(props) {
+//   const meshRef = useRef()
+//   const dummy = new THREE.Object3D()
+//   const spheres = useRef([])
+//   const count = gogipositions.length
+
+//   useEffect(() => {
+//     console.log('init mesh start')
+
+//     for (let i = 0; i < count; i++) {
+//       const sphere = {
+//         position : new THREE.Vector3(gogipositions[i][1], gogipositions[i][2], gogipositions[i][0])
+//       }
+//       spheres.current.push(sphere)
+//     }
+
+//     spheres.current.forEach((sphere, i) => {
+//       dummy.position.copy(sphere.position)
+//       dummy.updateMatrix()
+//       meshRef.current.setMatrixAt(i, dummy.matrix)
+//     })
+//     meshRef.current.instanceMatrix.needsUpdate = true
+//   }, [])
+
+//   return (
+//         <instancedMesh
+//         ref={meshRef} args={[null, null, count]}
+//         onClick={()=>props.propState('main')}>
+//           <sphereGeometry attach="geometry" args={[0.02, 6, 6]} />
+//           <meshStandardMaterial attach="material" color={colors.DarkWood} />
+//         </instancedMesh>
+//   )
+// }
 
 export default function navThree(props) {
   return (
@@ -155,10 +190,11 @@ export default function navThree(props) {
         <directionalLight position={[1, 0.7, 0.4]} />
         <directionalLight position={[-1, -0.7, -0.4]} />
         <OrbitControls autoRotate={true} screenSpacePanning={false} />
-        <Ttukbaegi propState={props.propState}/>
+        {/* <Ttukbaegi propState={props.propState}/>
         <Gukbob propState={props.propState}/>
         <Pha propState={props.propState}/>
-        <Gogi propState={props.propState}/>
+        <Gogi propState={props.propState}/> */}
+        <Point />
       </Canvas>
     </s.navBackground>
   )
