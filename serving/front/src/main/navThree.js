@@ -39,7 +39,7 @@ function Point() {
         <instancedMesh 
         ref={meshRef} args={[null, null, count]}
         >
-          <sphereGeometry attach="geometry" args={[0.01, 6, 6]} />
+          <sphereGeometry attach="geometry" args={[0.02, 6, 6]} />
           <meshStandardMaterial attach="material" color={colors.WhiteBlue} />
         </instancedMesh>
   )
