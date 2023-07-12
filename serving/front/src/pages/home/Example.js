@@ -1,7 +1,7 @@
 import { Canvas, useLoader } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { PCDLoader } from 'three-stdlib'
-import * as s from "./navThree_css";
+import * as s from "./Example_css";
 
 function Points(props) {
   const points = useLoader(PCDLoader, 'RGB1.pcd')
@@ -10,12 +10,12 @@ function Points(props) {
 
 export default function Example() {
   return (
-    <s.navBackground>
+    <s.ExampleBackground>
       <Canvas
-      camera={{ position: [0.01, 0, 0]}}>
-        <Points rotation={[Math.PI/2, Math.PI, Math.PI/2]} material-size={0.04} material-color="white" />
-        <OrbitControls />
+      camera={{ position: [3, 2, 0]}}>
+        <Points rotation={[Math.PI/2, Math.PI, Math.PI/2]} material-size={0.001} material-color="white" />
+        <OrbitControls autoRotate={true}/>
       </Canvas>
-    </s.navBackground>
+    </s.ExampleBackground>
   )
 }

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../design/design'
+import { colors } from '../design/Design'
 
 export const sendImageBackground = styled.div`
   position: absolute;

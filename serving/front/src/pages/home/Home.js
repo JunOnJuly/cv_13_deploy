@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import * as s from "./main_css";
-import Example from "./example"
-import SendImage from "process/sendImage";
+import * as s from "./Home_css";
+import Example from "./Example"
 
-function main() {
+function Home() {
   const [state, setState] = useState("three")
   const mainState = (state) => {
     setState(state)
@@ -12,10 +11,10 @@ function main() {
   console.log(state == "three");
 
   return (
-    <s.mainBackground>
+    <s.HomeBackground>
       <Example />
-    </s.mainBackground>
+    </s.HomeBackground>
   )
 }
 
-export default main
+export default Home

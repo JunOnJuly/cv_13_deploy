@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { colors } from '../design/design'
+import { colors } from '../../design/Design'
 
-export const mainBackground = styled.div`
+export const MainBackground = styled.div`
   position: absolute;
   left: 0;
   top: 0;
@@ -14,5 +14,6 @@ export const mainBackground = styled.div`
   justify-content: start;
   align-items: center;
 
-  background-color: ${colors.MainBlue};
+  background-color: ${colors.Background};
+  /* background-color: black; */
 `
