@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as s from "./main_css";
-import NavThree from "./navThree"
+import Example from "./example"
 import SendImage from "process/sendImage";
 
 function main() {
@@ -13,12 +13,7 @@ function main() {
 
   return (
     <s.mainBackground>
-      {
-        {
-          three : <NavThree propState={mainState} />,
-          main : <SendImage />
-        }[state]
-      } 
+      <Example />
     </s.mainBackground>
   )
 }
