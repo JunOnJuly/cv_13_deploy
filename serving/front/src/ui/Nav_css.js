@@ -3,7 +3,7 @@ import { colors } from '../design/Design'
 import "../fonts/fonts.css"
 
 export const NavBackground = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 10vw;
 
@@ -33,4 +33,5 @@ export const NavText = styled.p`
   font-family: 'WorkSans';
   color: ${colors.Nav};
   font-size: 5vh;
+  cursor: default;
 `

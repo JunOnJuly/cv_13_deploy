@@ -16,4 +16,5 @@ export const ResearchBackground = styled.div`
   font-family: 'WorkSans';
   color: ${colors.Nav};
   font-size: 2vh;
+  cursor: default;
 `

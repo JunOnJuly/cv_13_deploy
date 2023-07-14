@@ -9,6 +9,7 @@ export const AboutBackground = styled.div`
   height: 80vh;
   width: 100vw;
 `
+
 export const AboutItemDiv = styled.div`
   position: absolute;
   top: 0vh;
@@ -36,17 +37,13 @@ export const AboutItemTextDiv = styled.div`
   margin-right: 2vw;
 `
 
-export const AboutItemText = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+export const AboutItemText = styled.p`
   margin: 0;
 
   font-family: 'WorkSans';
   color: ${colors.Nav};
   font-size: 5vh;
+  cursor: default;
 `
 
 export const AboutContextDiv =styled.div`

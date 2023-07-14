@@ -16,4 +16,5 @@ export const TeamText = styled.p`
   font-family: 'WorkSans';
   color: ${colors.Nav};
   font-size: 2vh;
+  cursor: default;
 `

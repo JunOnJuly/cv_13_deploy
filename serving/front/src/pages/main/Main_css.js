@@ -8,6 +8,7 @@ export const MainBackground = styled.div`
 
   height: 100vh;
   width: 100vw;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
