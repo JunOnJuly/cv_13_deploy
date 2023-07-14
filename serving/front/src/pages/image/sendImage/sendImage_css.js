@@ -18,19 +18,21 @@ export const sendImageBackground = styled.div`
 `
 
 export const imageSendTextDiv = styled.div`
-  width: 25vw;
+  width: auto;
   height: 70vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
+
+  margin-right: 5vw;
 `
 
 export const imageSendText = styled.p`
   font-family: 'WorkSans';
   color: ${colors.Else};
-  font-size: 13vh;
+  font-size: min(13vh, 6.5vw);
   margin: 0;
   cursor: default;
 `
@@ -61,7 +63,8 @@ export const imageSelectLabel = styled.label`
   align-items: center;
   
   display: ${(props) => props.select};
-  font-size: 20vh;
+  font-family: 'WorkSans';
+  font-size: min(20vh, 10vw);
   color: white;
 `
 
@@ -74,7 +77,8 @@ export const imageSendLabel = styled.label`
   align-items: center;
   
   display: ${(props) => props.send};
-  font-size: 20vh;
+  font-family: 'WorkSans';
+  font-size: min(20vh, 10vw);
   color: white;
 `
 

@@ -32,6 +32,6 @@ export const NavText = styled.p`
 
   font-family: 'WorkSans';
   color: ${colors.Nav};
-  font-size: 5vh;
+  font-size: min(5vh, 2.5vw);
   cursor: default;
 `
