@@ -19,7 +19,12 @@ export const sendImageBackground = styled.div`
 
 export const imageSendTextDiv = styled.div`
   width: 25vw;
-  height: 60vh;
+  height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 `
 
 export const imageSendText = styled.p`
