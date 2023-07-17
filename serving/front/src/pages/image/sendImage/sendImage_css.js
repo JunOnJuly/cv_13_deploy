@@ -7,7 +7,6 @@ export const sendImageBackground = styled.div`
   top: 0;
 
   height: 70vh;
-  min-width: 80vw;
 
   display: flex;
   flex-direction: row;
@@ -26,7 +25,7 @@ export const imageSendTextDiv = styled.div`
   justify-content: center;
   align-items: start;
 
-  margin-right: 5vw;
+  margin-right: 4vw;
 `
 
 export const imageSendText = styled.p`
@@ -47,7 +46,7 @@ export const imageSelectForm = styled.form`
 
   background-color: ${colors.Nav};
 
-  margin-right: ${(props) => props.margin};
+  /* margin-right: ${(props) => props.margin}; */
 `
 
 export const imageSelectBtn = styled.input`
@@ -88,7 +87,8 @@ export const imageCheckDiv = styled.div`
 
 export const imageCheckImage = styled.img`
   height: 60vh;
-  margin: 0 5vw 0 0
+
+  margin: 0 5vw 0 0;
 `
 
 export const imageSubmitBtn = styled.input`

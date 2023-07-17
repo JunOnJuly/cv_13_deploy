@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react'
 import * as s from "./sendImage_css";
 import axios from 'axios';
 
-export default function SendImage() {
+export default function SendImage(props) {
   const [file, setFile] = useState('')
   const [image, setImage] = useState('')
   const [select, setSelect] = useState('flex')
   const [send, setSend] = useState('none')
-  const [margin, setMargin] = useState(0)
+  // const [margin, setMargin] = useState(0)
 
   const sendImage = async (e) => {
     e.preventDefault();
@@ -33,7 +33,8 @@ export default function SendImage() {
     setFile(imageFile)
     setSelect('none')
     setSend('flex')
-    setMargin('10vw')
+    props.setScroll()
+    // setMargin('10vw')
   }
 
   return (
@@ -79,7 +80,8 @@ export default function SendImage() {
       </s.imageCheckDiv>
     }
 
-      <s.imageSelectForm onSubmit={(e) => sendImage(e)} margin={margin}>
+      {/* <s.imageSelectForm onSubmit={(e) => sendImage(e)} margin={margin}> */}
+      <s.imageSelectForm>
 
         <s.imageSelectLabel for="sendBtn" select={select}>
           HERE
